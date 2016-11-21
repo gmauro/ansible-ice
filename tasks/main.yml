@@ -1,0 +1,8 @@
+- include: add_apt_repo.yml
+  when:
+    - add_repository
+    - ansible_distribution == 'Ubuntu'
+    - ice_version >= 3.6
+
+- include: install_packages.yml
+  when: install_packages

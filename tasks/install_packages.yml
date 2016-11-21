@@ -1,0 +1,20 @@
+- name: Install Ice prerequisites
+  apt: name={{ item }} state={{ packages_state }} update_cache=yes
+  with_items:
+    - db5.3-util
+    - libssl-dev
+    - libbz2-dev
+    - libmcpp-dev
+    - libdb++-dev
+    - libdb-dev
+    - python-pip
+    - build-essential
+
+- name: Install Ice packages
+  apt: name={{ item }} state={{ packages_state }} update_cache=yes
+  with_items:
+    - zeroc-ice-all-runtime
+    - zeroc-ice-all-dev
+
+- name: Install Ice
+  pip: name=zeroc-ice version={{ ice_version }}

@@ -1,0 +1,5 @@
+- name: Import the repository key
+  apt_key: id=5E6DA83306132997 keyserver='keyserver.ubuntu.com' state={{ packages_state }}
+
+- name: Create the repo source file
+  apt_repository: repo='deb http://zeroc.com/download/apt/ubuntu{{ ansible_distribution_version }} stable main' state={{ packages_state }} filename='ice'

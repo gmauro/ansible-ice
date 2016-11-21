@@ -1,0 +1,4 @@
+packages_state: present
+install_packages: yes
+add_repository: yes
+ice_version: 3.6
