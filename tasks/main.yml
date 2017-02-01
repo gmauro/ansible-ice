@@ -1,7 +1,7 @@
 - include: add_apt_repo.yml
   when:
     - add_repository
-    - ansible_distribution == 'Ubuntu'
+    - (ansible_distribution == 'Ubuntu') or (ansible_distribution == 'Debian')
     - ice_version >= 3.6
 
 - include: install_packages.yml
