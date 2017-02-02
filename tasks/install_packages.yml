@@ -7,6 +7,7 @@
     - libmcpp-dev
     - libdb++-dev
     - libdb-dev
+    - python-dev
     - python-pip
     - build-essential
 
