@@ -17,5 +17,5 @@
     - zeroc-ice-all-runtime
     - zeroc-ice-all-dev
 
-- name: Install Ice
+- name: Install Ice Python extension
   pip: name=zeroc-ice version={{ ice_version }}
