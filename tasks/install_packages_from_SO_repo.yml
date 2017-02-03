@@ -1,0 +1,6 @@
+- name: Install Ice packages
+  apt: name={{ item }} state={{ packages_state }} update_cache=yes
+  with_items:
+    - ice-services
+    - python-zeroc-ice
+

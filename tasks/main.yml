@@ -4,5 +4,15 @@
     - ansible_os_family == 'Debian'
     - ice_version >= 3.6
 
-- include: install_packages.yml
-  when: install_packages
+- include: install_packages_from_ICE_repo.yml
+  when:
+    - install_packages
+    - ansible_os_family == 'Debian'
+    - ice_version >= 3.6
+
+- include: install_packages_from_SO_repo.yml
+  when:
+    - install_packages
+    - ansible_os_family == 'Debian'
+    - ice_version < 3.6
+
